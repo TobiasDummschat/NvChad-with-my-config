@@ -1,3 +1,6 @@
+local overrides = require("custom.configs.overrides")
+
+---@type NvPluginSpec[]
 local plugins = {
   -- Theme
   {
@@ -7,77 +10,126 @@ local plugins = {
     lazy = false,
   },
 
-  -- You can use any plugin specification from lazy.nvim
   {
-    "Pocco81/TrueZen.nvim",
-    cmd = { "TZAtaraxis", "TZMinimalist" },
+   "williamboman/mason.nvim",
+   opts = overrides.mason,
     config = function()
-      require "custom.configs.truezen" -- just an example path
+      require("mason").setup()
     end,
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {"williamboman/mason.nvim"},
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("custom.configs.lspconfig")
+    end,
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+    },
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
   },
 
   -- this opts will extend the default opts 
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        -- defaults 
-        "vim",
-        "lua",
-
-        -- web dev 
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "json",
-        -- "vue", "svelte",
-
-       -- low level
-        "c",
-        "zig"
-      },
-    },
-  },
-
-  -- If your opts uses a function call, then make opts spec a function*
-  -- should return the modified default config as well
-  -- here we just call the default telescope config 
-  -- and then assign a function to some of its options
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = function()
-      local conf = require "plugins.configs.telescope"
-      conf.defaults.mappings.i = {
-        ["<C-j>"] = require("telescope.actions").move_selection_next,
-        ["<Esc>"] = require("telescope.actions").close,
-      }
-
-      return conf
+    config = function()
+      require("plugins.configs.treesitter")
+      require("custom.configs.treesitter")
     end,
   },
 
-  -- In order to modify the `lspconfig` configuration:
   {
-  "neovim/nvim-lspconfig",
-   config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
-   end,
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
 
-   {
-   "williamboman/mason.nvim",
-   opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "html-lsp",
-        "prettier",
-        "stylua"
-      },
-    },
+  {
+    "mfussenegger/nvim-dap",
+    config = function ()
+      require("custom.configs.dap")
+    end
   },
+
+  {
+    "mfussenegger/nvim-dap-python",
+    dependencies = {"mfussenegger/nvim-dap"},
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {"mfussenegger/nvim-dap"},
+  },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 100,
+      }
+    }
+  },
+
+  -- You can use any plugin specification from lazy.nvim
+  {
+    "Pocco81/true-zen.nvim",
+    cmd = { "TZAtaraxis", "TZMinimalist", "TZNarrow", "TZFocus" },
+  },
+
+
+
+  {
+   "folke/trouble.nvim",
+   dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
+
+  {
+    "ggandor/leap.nvim",
+    config = function()
+      require('leap').add_default_mappings()
+    end,
+    dependencies = {"tpope/vim-repeat"},
+    lazy = false,
+  },
+
+  {
+    "ggandor/flit.nvim",
+    config = function()
+      require("flit").setup()
+    end,
+    dependencies = {"leap.nvim"},
+    lazy = false,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({})
+    end,
+  },
+
+  {
+    "dccsillag/magma-nvim",
+  }
 }
 
 return plugins

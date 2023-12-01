@@ -1,4 +1,6 @@
-<h1 align="center">NvChad</h1>
+<h1 align="center">NvChad with my Configuration</h1>
+
+A fork of [NvChad](https://github.com/NvChad/NvChad) including my custom configuration in [./lua/custom](./lua/custom).
 
 <div align="center">
 	<a href="https://nvchad.com/">Home</a>
