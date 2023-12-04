@@ -2,6 +2,9 @@
 
 A fork of [NvChad](https://github.com/NvChad/NvChad) including my custom configuration in [./lua/custom](./lua/custom).
 
+To setup the Python provider:
+Run `poetry install --no-root --sync`
+
 <div align="center">
 	<a href="https://nvchad.com/">Home</a>
   <span> • </span>

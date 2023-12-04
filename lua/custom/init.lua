@@ -4,3 +4,5 @@ vim.filetype.add({
     ["Jenkinsfile"] = "groovy",
   }
 })
+
+require("custom.providers")
