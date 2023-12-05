@@ -34,7 +34,7 @@ return {
         "zip",
         "zipPlugin",
         "tutor",
-        "rplugin",
+        -- "rplugin",  -- Needed for Python plugins like Magma
         "syntax",
         "synmenu",
         "optwin",

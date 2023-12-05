@@ -129,7 +129,13 @@ local plugins = {
 
   {
     "dccsillag/magma-nvim",
-  }
+    build = ":UpdateRemotePlugins",
+    cmd = {"MagmaInit"},
+    config = function ()
+      vim.g.magma_image_provider = "kitty"
+    end,
+  },
+
 }
 
 return plugins
