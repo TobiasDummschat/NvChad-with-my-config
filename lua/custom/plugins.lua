@@ -136,6 +136,22 @@ local plugins = {
     end,
   },
 
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function ()
+      require("custom.configs.neotest")
+    end
+  },
+
+  {
+    "nvim-neotest/neotest-python",
+    dependencies = { "nvim-neotest/neotest" },
+  }
 }
 
 return plugins

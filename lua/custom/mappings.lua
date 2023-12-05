@@ -26,6 +26,15 @@ M.abc = {
     ["<leader>mdc"] = {":MagmaDelete<CR>", "Magma Delete Cell"},
     ["<leader>mto"] = {":MagmaShowOutput<CR>", "Magma Toggle Output"},
     ["<leader>mep"] = {"vip:<C-u>MagmaEvaluateVisual<CR>", "Magma Evaluate Paragraph"},
+
+    -- Neotest
+    ["<leader>tr"] = {':lua require("neotest").run.run()<CR>', "Neotest: Run nearest test"},
+    ["<leader>tf"] = {':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', "Neotest: Run tests in file"},
+    ["<leader>td"] = {':lua require("neotest").run.run({strategy = "dap"})<CR>', "Neotest: Debug nearest test"},
+    ["<leader>ts"] = {':lua require("neotest").run.stop()<CR>', "Neotest: Stop nearest test"},
+    ["<leader>ta"] = {':lua require("neotest").run.attach()<CR>', "Neotest: Attach to nearest test"},
+    ["<leader>to"] = {':lua require("neotest").output.open({enter=true})<CR>', "Neotest: Show output"},
+    ["<leader>tt"] = {':lua require("neotest").summary.toggle()<CR>', "Neotest: Toggle summary"},
   },
   i =  {},
   v = {
