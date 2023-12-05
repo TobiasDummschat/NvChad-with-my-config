@@ -19,17 +19,17 @@ local handlers = {
 
   -- Next, you can provide targeted overrides for specific servers.
   ["pylsp"] = function ()
-      lspconfig.groovyls.setup {
+      lspconfig.pylsp.setup {
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {
           pylsp = {
-          plugins =  {
-            pycodestyle = {
-              enabled = false,
+            plugins =  {
+              pycodestyle = {
+                enabled = false,
+              }
             }
           }
-        }
         }
       }
   end,
