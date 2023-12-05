@@ -25,9 +25,8 @@ local handlers = {
         settings = {
           pylsp = {
             plugins =  {
-              pycodestyle = {
-                enabled = false,
-              }
+              pyflakes = { enabled = false },
+              pycodestyle = { enabled = false },
             }
           }
         }

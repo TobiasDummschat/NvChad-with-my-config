@@ -35,6 +35,9 @@ M.abc = {
     ["<leader>ta"] = {':lua require("neotest").run.attach()<CR>', "Neotest: Attach to nearest test"},
     ["<leader>to"] = {':lua require("neotest").output.open({enter=true})<CR>', "Neotest: Show output"},
     ["<leader>tt"] = {':lua require("neotest").summary.toggle()<CR>', "Neotest: Toggle summary"},
+
+    -- Trouble
+    ["<leader>d"] = {":TroubleToggle<CR>", "Diagnostics"},
   },
   i =  {},
   v = {
