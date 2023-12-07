@@ -29,12 +29,14 @@ M.abc = {
 
     -- Neotest
     ["<leader>tr"] = {':lua require("neotest").run.run()<CR>', "Neotest: Run nearest test"},
+    ["<leader>tt"] = {':lua require("neotest").run.run_last()<CR>', "Neotest: Run last test"},
     ["<leader>tf"] = {':lua require("neotest").run.run(vim.fn.expand("%"))<CR>', "Neotest: Run tests in file"},
     ["<leader>td"] = {':lua require("neotest").run.run({strategy = "dap"})<CR>', "Neotest: Debug nearest test"},
-    ["<leader>ts"] = {':lua require("neotest").run.stop()<CR>', "Neotest: Stop nearest test"},
+    ["<leader>tx"] = {':lua require("neotest").run.stop()<CR>', "Neotest: Stop nearest test"},
     ["<leader>ta"] = {':lua require("neotest").run.attach()<CR>', "Neotest: Attach to nearest test"},
-    ["<leader>to"] = {':lua require("neotest").output.open({enter=true})<CR>', "Neotest: Show output"},
-    ["<leader>tt"] = {':lua require("neotest").summary.toggle()<CR>', "Neotest: Toggle summary"},
+    ["<leader>to"] = {':lua require("neotest").output_panel.toggle()<CR>', "Neotest: Toggle output panel"},
+    ["<leader>tc"] = {':lua require("neotest").output_panel.clear()<CR>', "Neotest: Clear output panel"},
+    ["<leader>ts"] = {':lua require("neotest").summary.toggle()<CR>', "Neotest: Toggle summary"},
 
     -- Trouble
     ["<leader>d"] = {":TroubleToggle<CR>", "Diagnostics"},
