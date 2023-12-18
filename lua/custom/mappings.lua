@@ -39,7 +39,12 @@ M.abc = {
     ["<leader>ts"] = {':lua require("neotest").summary.toggle()<CR>', "Neotest: Toggle summary"},
 
     -- Trouble
-    ["<leader>d"] = {":TroubleToggle<CR>", "Diagnostics"},
+    ["<leader>dl"] = {":TroubleToggle<CR>", "Diagnostics list"},
+
+    -- Diffview
+    ["<leader>dv"] = {":DiffviewOpen<CR>", "Open Diffview"},
+    ["<leader>cn"] = {"]x", "Next conflict"},
+    ["<leader>cp"] = {"[x", "Previous conflict"},
   },
   i =  {},
   v = {

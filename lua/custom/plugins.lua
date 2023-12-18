@@ -134,6 +134,7 @@ local plugins = {
     cmd = {"MagmaInit"},
     config = function ()
       vim.g.magma_image_provider = "kitty"
+      vim.g.magma_automatically_open_output = "v:false"
     end,
   },
 
@@ -152,7 +153,20 @@ local plugins = {
   {
     "nvim-neotest/neotest-python",
     dependencies = { "nvim-neotest/neotest" },
-  }
+  },
+
+  {
+    "sindrets/diffview.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    cmd = { "DiffviewOpen", "DiffviewFileHistory"},
+    config = {
+      view = {
+        merge_tool = {
+          layout = "diff3_mixed",
+        }
+      }
+    },
+  },
 }
 
 return plugins
