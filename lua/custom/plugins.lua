@@ -167,6 +167,26 @@ local plugins = {
       }
     },
   },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = {"Copilot"},
+    event = "InsertEnter",
+    config = function ()
+      require("copilot").setup({
+        panel = {
+          auto_refresh = true,
+        },
+        suggestion = {
+          auto_trigger = true,
+          accept = "<M-l>",
+          next = "<M-j>",
+          prev = "<M-k>",
+          dismiss = "<M-h>",
+        }
+      })
+    end,
+  }
 }
 
 return plugins
