@@ -47,6 +47,7 @@ M.treesitter = {
     "xml",
     "yaml",
   },
+  highlight = {enable = true},
 }
 
 -- for use with mason-lspconfig
