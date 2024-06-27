@@ -129,16 +129,6 @@ local plugins = {
   },
 
   {
-    "dccsillag/magma-nvim",
-    build = ":UpdateRemotePlugins",
-    cmd = {"MagmaInit"},
-    config = function ()
-      vim.g.magma_image_provider = "kitty"
-      vim.g.magma_automatically_open_output = "v:false"
-    end,
-  },
-
-  {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -198,6 +188,7 @@ local plugins = {
   {
     "3rd/image.nvim",
     dependencies = { "luarocks.nvim" },
+    version = "1.3.0",
     ft = "markdown",
     opts = {
       backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
@@ -220,7 +211,18 @@ local plugins = {
     config = function()
       require("image").setup()
     end
-  }
+  },
+
+  {
+    "benlubas/molten-nvim",
+    version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+    dependencies = { "3rd/image.nvim" },
+    build = ":UpdateRemotePlugins",
+    init = function()
+      require("custom.configs.molten")
+    end,
+  },
+
 }
 
 return plugins

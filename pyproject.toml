@@ -5,19 +5,21 @@ description = "Requirements needed for my Neovim configuration to function."
 authors = ["Tobias Dummschat <dummschat@vilisto.de>"]
 readme = "README.md"
 packages = []
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
 pynvim = "^0.5.0"
+setuptools = "^70.1.1"
+wheel = "^0.43.0"
 
-[tool.poetry.group.magma.dependencies]
-jupyter-client = "^8.6.0"
-pillow = "^10.1.0"
+[tool.poetry.group.molten.dependencies]
+jupyter-client = "^8.6.2"
 cairosvg = "^2.7.1"
 pnglatex = "^1.1"
-plotly = "^5.18.0"
+plotly = "^5.22.0"
 kaleido = "!=0.2.1.post1"
-pyperclip = "^1.8.2"
+pyperclip = "^1.9.0"
 
 [build-system]
 requires = ["poetry-core"]

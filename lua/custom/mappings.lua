@@ -2,7 +2,9 @@ local M = {}
 
 -- In order to disable a default keymap, use
 M.disabled = {
-  n = {},
+  n = {
+    ["<leader>e"] = {}
+  },
   i =  {},
   v = {},
 }
@@ -16,16 +18,16 @@ M.abc = {
     ["<leader>zm"] = {":TZMinimalist<CR>", "TrueZen Minimalist"},
     ["<leader>za"] = {":TZAtaraxis<CR>", "TrueZen Ataraxis"},
 
-    -- Magma
-    ["<leader>mi"] = {":MagmaInit python3<CR>", "Magma Start"},
-    ["<leader>mx"] = {":MagmaInterrupt<CR>", "Magma Interrupt"},
-    ["<leader>mr"] = {":MagmaRestart<CR>", "Magma Restart"},
-    ["<leader>mel"] = {":MagmaEvaluateLine<CR>", "Magma Evaluate Line"},
-    ["<leader>meo"] = {":MagmaEvaluateOperator<CR>", "Magma Evaluate Operator"},
-    ["<leader>mec"] = {":MagmaReevaluateCell<CR>", "Magma Reevaluate Cell"},
-    ["<leader>mdc"] = {":MagmaDelete<CR>", "Magma Delete Cell"},
-    ["<leader>mto"] = {":MagmaShowOutput<CR>", "Magma Toggle Output"},
-    ["<leader>mep"] = {"vip:<C-u>MagmaEvaluateVisual<CR>", "Magma Evaluate Paragraph"},
+    -- Molten
+    ["<leader>mi"] = {":MoltenInit python3<CR>", "Molten Start"},
+    ["<leader>mx"] = {":MoltenInterrupt<CR>", "Molten Interrupt"},
+    ["<leader>mr"] = {":MoltenRestart<CR>", "Molten Restart"},
+    ["<leader>el"] = {":MoltenEvaluateLine<CR>", "Molten Evaluate Line"},
+    ["<leader>eo"] = {":MoltenEvaluateOperator<CR>", "Molten Evaluate Operator"},
+    ["<leader>ec"] = {":MoltenReevaluateCell<CR>", "Molten Reevaluate Cell"},
+    ["<leader>ep"] = {"vip:<C-u>MoltenEvaluateVisual<CR>", "Molten Evaluate Paragraph"},
+    ["<leader>md"] = {":MoltenDelete<CR>", "Molten Delete Cell"},
+    ["<leader>mo"] = {":MoltenShowOutput<CR>:noautocmd MoltenEnterOutput<CR>", "Molten Open Output"},
 
     -- Neotest
     ["<leader>tr"] = {':lua require("neotest").run.run()<CR>', "Neotest: Run nearest test"},
@@ -51,8 +53,8 @@ M.abc = {
     -- TrueZen
     ["<leader>zn"] = {":'<,'>TZNarrow<CR>", "TrueZen Narrow"},
 
-    -- Magma
-    ["<leader>mev"] = {":<C-u>MagmaEvaluateVisual<CR>", "Magma Evaluate Visual"},
+    -- Molten
+    ["<leader>mev"] = {":<C-u>MoltenEvaluateVisual<CR>", "Molten Evaluate Visual"},
   },
 }
 
