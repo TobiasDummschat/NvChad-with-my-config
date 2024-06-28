@@ -20,12 +20,6 @@ M.abc = {
     ["<C-A-j>"] = {':lua require("tree-climber").swap_next({highlight = true, skip_comments = true, timeout = 250})<CR>', "Swap with next node"},
     ["<C-A-k>"] = {':lua require("tree-climber").swap_prev({highlight = true, skip_comments = true, timeout = 250})<CR>', "Swap with previous node"},
 
-    -- TrueZen
-    ["<leader>zn"] = {":TZNarrow<CR>", "TrueZen Narrow"},
-    ["<leader>zf"] = {":TZFocus<CR>", "TrueZen Focus"},
-    ["<leader>zm"] = {":TZMinimalist<CR>", "TrueZen Minimalist"},
-    ["<leader>za"] = {":TZAtaraxis<CR>", "TrueZen Ataraxis"},
-
     -- Molten / IPython / Jupyter
     ["<leader>ea"] = {":MoltenReevaluateAll<CR>", "Reevaluate All (Molten)"},
     ["<leader>el"] = {":MoltenEvaluateLine<CR>", "Evaluate Line (Molten)"},
@@ -59,9 +53,6 @@ M.abc = {
   },
   i =  {},
   v = {
-    -- TrueZen
-    ["<leader>zn"] = {":'<,'>TZNarrow<CR>", "TrueZen Narrow"},
-
     -- Molten
     ["<leader>e"] = {":<C-u>MoltenEvaluateVisual<CR>", "Evaluate Visual (Molten)"},
   },

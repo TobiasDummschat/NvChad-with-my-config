@@ -97,14 +97,6 @@ local plugins = {
     }
   },
 
-  -- You can use any plugin specification from lazy.nvim
-  {
-    "Pocco81/true-zen.nvim",
-    cmd = { "TZAtaraxis", "TZMinimalist", "TZNarrow", "TZFocus" },
-  },
-
-
-
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
