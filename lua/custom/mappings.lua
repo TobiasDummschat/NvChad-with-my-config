@@ -12,6 +12,14 @@ M.disabled = {
 -- Your custom mappings
 M.abc = {
   n = {
+    -- Tree-Climber
+    ["<C-h>"] = {':lua require("tree-climber").goto_parent({highlight = true, skip_comments = true, timeout = 250})<CR>', "Go to parent node"},
+    ["<C-l>"] = {':lua require("tree-climber").goto_child({highlight = true, skip_comments = true, timeout = 250})<CR>', "Go to child node"},
+    ["<C-j>"] = {':lua require("tree-climber").goto_next({highlight = true, skip_comments = true, timeout = 250})<CR>', "Go to next node"},
+    ["<C-k>"] = {':lua require("tree-climber").goto_prev({highlight = true, skip_comments = true, timeout = 250})<CR>', "Go to previous node"},
+    ["<C-A-j>"] = {':lua require("tree-climber").swap_next({highlight = true, skip_comments = true, timeout = 250})<CR>', "Swap with next node"},
+    ["<C-A-k>"] = {':lua require("tree-climber").swap_prev({highlight = true, skip_comments = true, timeout = 250})<CR>', "Swap with previous node"},
+
     -- TrueZen
     ["<leader>zn"] = {":TZNarrow<CR>", "TrueZen Narrow"},
     ["<leader>zf"] = {":TZFocus<CR>", "TrueZen Focus"},

@@ -67,6 +67,10 @@ local plugins = {
   },
 
   {
+    "drybalka/tree-climber.nvim",
+  },
+
+  {
     "mfussenegger/nvim-dap",
     config = function ()
       require("custom.configs.dap")
