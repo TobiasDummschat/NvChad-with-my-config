@@ -22,7 +22,7 @@ M.abc = {
 
     -- Molten / IPython / Jupyter
     ["<leader>ea"] = {":MoltenReevaluateAll<CR>", "Reevaluate All (Molten)"},
-    ["<leader>el"] = {":MoltenEvaluateLine<CR>", "Evaluate Line (Molten)"},
+    ["<leader>ee"] = {":MoltenEvaluateLine<CR>", "Evaluate Line (Molten)"},
     ["<leader>eo"] = {":MoltenEvaluateOperator<CR>", "Evaluate Operator (Molten)"},
     ["<leader>ec"] = {":MoltenReevaluateCell<CR>", "Reevaluate Cell (Molten)"},
     ["<leader>ep"] = {"vip:<C-u>MoltenEvaluateVisual<CR>", "Evaluate Paragraph (Molten)"},
@@ -31,20 +31,6 @@ M.abc = {
     ["<leader>er"] = {":MoltenRestart<CR>", "Kernel Restart (Molten)"},
     ["<leader>ed"] = {":MoltenDelete<CR>", "Delete Cell (Molten)"},
     ["<leader>es"] = {":noautocmd MoltenEnterOutput<CR>", "Show / Enter Output (Molten)"},
-    ["<leader>ee"] = {
-      function()
-        local venv = os.getenv("VIRTUAL_ENV")
-        if venv == nil then
-          print("⚠️  No virtual environment found. Please activate the correct virtual environment first or select an existing kernel.")
-          vim.cmd("MoltenInit")
-          return
-        end
-        local kernel = string.match(venv, "/.+/(.+)/[^/]+")
-        vim.cmd(("MoltenInit %s"):format(kernel))
-      end,
-      "Initialize Molten",
-    },
-
 
     -- Neotest
     ["<leader>tr"] = {':lua require("neotest").run.run()<CR>', "Neotest: Run nearest test"},
