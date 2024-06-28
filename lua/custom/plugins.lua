@@ -44,15 +44,26 @@ local plugins = {
   -- this opts will extend the default opts 
   {
     "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    lazy = false,
     config = function()
       require("plugins.configs.treesitter")
       require("custom.configs.treesitter")
     end,
+    keys = {
+      { "<c-space>", desc = "Increment Selection" },
+      { "<bs>", desc = "Decrement Selection", mode = "x" },
+    },
   },
 
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    build = ":TSUpdate",
+    lazy = false,
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("custom.configs.treesitter-textobjects")
+    end,
   },
 
   {

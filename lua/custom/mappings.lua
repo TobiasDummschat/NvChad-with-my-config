@@ -18,16 +18,17 @@ M.abc = {
     ["<leader>zm"] = {":TZMinimalist<CR>", "TrueZen Minimalist"},
     ["<leader>za"] = {":TZAtaraxis<CR>", "TrueZen Ataraxis"},
 
-    -- Molten
-    ["<leader>mi"] = {":MoltenInit python3<CR>", "Molten Start"},
-    ["<leader>mx"] = {":MoltenInterrupt<CR>", "Molten Interrupt"},
-    ["<leader>mr"] = {":MoltenRestart<CR>", "Molten Restart"},
-    ["<leader>el"] = {":MoltenEvaluateLine<CR>", "Molten Evaluate Line"},
-    ["<leader>eo"] = {":MoltenEvaluateOperator<CR>", "Molten Evaluate Operator"},
-    ["<leader>ec"] = {":MoltenReevaluateCell<CR>", "Molten Reevaluate Cell"},
-    ["<leader>ep"] = {"vip:<C-u>MoltenEvaluateVisual<CR>", "Molten Evaluate Paragraph"},
-    ["<leader>md"] = {":MoltenDelete<CR>", "Molten Delete Cell"},
-    ["<leader>mo"] = {":MoltenShowOutput<CR>:noautocmd MoltenEnterOutput<CR>", "Molten Open Output"},
+    -- Molten / IPython / Jupyter
+    ["<leader>ea"] = {":MoltenReevaluateAll<CR>", "Reevaluate All (Molten)"},
+    ["<leader>el"] = {":MoltenEvaluateLine<CR>", "Evaluate Line (Molten)"},
+    ["<leader>eo"] = {":MoltenEvaluateOperator<CR>", "Evaluate Operator (Molten)"},
+    ["<leader>ec"] = {":MoltenReevaluateCell<CR>", "Reevaluate Cell (Molten)"},
+    ["<leader>ep"] = {"vip:<C-u>MoltenEvaluateVisual<CR>", "Evaluate Paragraph (Molten)"},
+    ["<leader>ef"] = {"vaf:<C-u>MoltenEvaluateVisual<CR>", "Evaluate Function (Molten)"},
+    ["<leader>ei"] = {":MoltenInterrupt<CR>", "Kernel Interrupt (Molten)"},
+    ["<leader>er"] = {":MoltenRestart<CR>", "Kernel Restart (Molten)"},
+    ["<leader>ed"] = {":MoltenDelete<CR>", "Delete Cell (Molten)"},
+    ["<leader>es"] = {":noautocmd MoltenEnterOutput<CR>", "Show / Enter Output (Molten)"},
 
     -- Neotest
     ["<leader>tr"] = {':lua require("neotest").run.run()<CR>', "Neotest: Run nearest test"},
@@ -54,7 +55,7 @@ M.abc = {
     ["<leader>zn"] = {":'<,'>TZNarrow<CR>", "TrueZen Narrow"},
 
     -- Molten
-    ["<leader>mev"] = {":<C-u>MoltenEvaluateVisual<CR>", "Molten Evaluate Visual"},
+    ["<leader>e"] = {":<C-u>MoltenEvaluateVisual<CR>", "Evaluate Visual (Molten)"},
   },
 }
 
