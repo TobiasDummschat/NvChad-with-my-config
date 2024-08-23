@@ -21,6 +21,9 @@ M.treesitter = {
     "cpp",
     "cmake",
 
+    -- haskell
+    "haskell",
+
     -- shell stuff
     "bash",
     "fish",
@@ -70,6 +73,9 @@ M.lspconfig = {
     -- c/cpp stuff
     "clangd",
     "cmake",
+
+    -- haskell
+    "hls",
 
     -- shell stuff
     "bashls",
